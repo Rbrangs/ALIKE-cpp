@@ -10,7 +10,8 @@ include_directories(${CUDAToolkit_INCLUDE_DIRS})
 
 # 최신 GPU 아키텍처 설정
 # CUDA 아키텍처를 명시적으로 지정하여 'compute_35' 아키텍처를 사용하지 않도록 설정
-set(CMAKE_CUDA_ARCHITECTURES 75 80 86)  # RTX 20xx, 30xx, 40xx GPU 아키텍처
+set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
+set(CMAKE_CUDA_ARCHITECTURES 52 60 61 75 86)
 set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -arch=sm_75 -Wno-deprecated-gpu-targets")
 
 ### OpenMP
