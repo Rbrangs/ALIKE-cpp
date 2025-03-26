@@ -18,8 +18,9 @@ find_package(Torch REQUIRED PATHS ${PROJECT_SOURCE_DIR}/libtorch)
 message(STATUS "Found Torch include is ${TORCH_INCLUDE_DIRS}")
 include_directories(${TORCH_INCLUDE_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
-set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -Wno-deprecated-gpu-targets")
-###
+
+set(CMAKE_CUDA_ARCHITECTURES 75 80 86)
+set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -arch=sm_75 -Wno-deprecated-gpu-targets")###
 
 ### OPENCV
 find_package(OpenCV REQUIRED)
