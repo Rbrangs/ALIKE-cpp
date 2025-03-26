@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16.3)
-project(ALIKE_cpp LANGUAGES CXX CUDA)
+#project(ALIKE_cpp LANGUAGES CXX CUDA)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_BUILD_TYPE "Release")
 
