@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE "Release")
 
 ### CUDA 설정
-find_package(CUDAToolkit REQUIRED)
+find_package(CUDAToolkit REQUIRED PATHS /usr/local/cuda)
 include_directories(${CUDAToolkit_INCLUDE_DIRS})
 
 # 최신 GPU 아키텍처 설정
