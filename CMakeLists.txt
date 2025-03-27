@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.16.3)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_BUILD_TYPE "Release")
 
+set(CMAKE_CUDA_ARCHITECTURES 75 80)
+
 ### CUDA
 find_package(CUDA PATHS /usr/local/cuda)
 include_directories(${CUDA_INCLUDE_DIRS})
