@@ -8,6 +8,7 @@ set(CMAKE_CUDA_ARCHITECTURES 75)
 ### CUDA
 find_package(CUDA PATHS /usr/local/cuda)
 include_directories(${CUDA_INCLUDE_DIRS})
+find_package(Threads REQUIRED)
 ###
 
 ### OpenMP
@@ -38,7 +39,7 @@ add_library(get_patches SHARED src/get_patches.cpp)
 target_link_libraries(get_patches get_patches_cuda)
 
 include_directories(include)
-add_executable(demo 
-                src/main.cpp 
-                src/utils.cpp)
-target_link_libraries(demo ${TORCH_LIBRARIES} ${OpenCV_LIBS} get_patches)
+add_executable(demo
+        src/main.cpp
+        src/utils.cpp)
+target_link_libraries(demo PUBLIC Threads::Threads ${TORCH_LIBRARIES} ${OpenCV_LIBS} get_patches)
